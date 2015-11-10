@@ -123,7 +123,7 @@ public class JogadorTest {
 		// 2 mortes com M16
 		jogadorTO.incrementaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 30));
 		jogadorTO.incrementaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 50));
-		jogadorTO.incrementaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 61));
+		jogadorTO.incrementaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 63));
 		
 		// Valida os dados
 		Assert.assertEquals(NOM_JOGADOR, jogadorTO.getNomJogador());
