@@ -1,4 +1,4 @@
-package br.com.predojo.to;
+package br.com.predojo.entity;
 
 /**
  * Dados da arma.

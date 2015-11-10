@@ -1,4 +1,4 @@
-package br.com.predojo.to;
+package br.com.predojo.entity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -90,6 +90,10 @@ public class Jogador extends BaseKillsJogo {
 		return this.qtdMorreu > 0;
 	}
 
+	/**
+	 * Carrega a arma mais utilizada.
+	 * @return
+	 */
 	public Arma getArmaMaisUtilizada() {
 		
 		// Arma mais utilizada
@@ -107,6 +111,24 @@ public class Jogador extends BaseKillsJogo {
 		}
 		
 		return armaMaisUtilizada;
+		
+	}
+	
+	/**
+	 * Carrega o nome da arma mais utilizada.
+	 * @return
+	 */
+	public String getNomeArmaMaisUtilizada() {
+		
+		// Arma mais utilizada
+		String nomArmaMaisUtilizada = "";
+		Arma armaMaisUtilizada = getArmaMaisUtilizada();
+		
+		if (armaMaisUtilizada != null) {
+			nomArmaMaisUtilizada = armaMaisUtilizada.getNomArma();
+		}
+		
+		return nomArmaMaisUtilizada;
 		
 	}
 	
