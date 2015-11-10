@@ -27,19 +27,20 @@ Não obrigatório. Faça apenas caso se identifique com o problema ou se achar q
 
 SOLUÇÃO
 =======
-* Para a execução:
+Para a execução:
+----------------
 
-1 - Baixar o projeto
-2 - Executar o seguinte comando: mvn clean package
-3 - Executar o seguinte comando: mvn exec:java
-4 - Clicar no Botao de "Processar Arquivo"
-5 - Selecionar algum arquivo .txt ou .log
-6 - Clicar em Abrir
+* Baixar o projeto
+* Executar o seguinte comando: mvn clean package
+* Executar o seguinte comando: mvn exec:java
+* Clicar no Botao de "Processar Arquivo"
+* Selecionar algum arquivo .txt ou .log
+* Clicar em Abrir
 
--------------------------
-* Considerações
+Considerações
+-------------
 
-1 - A arquitetura está muito simples, onde tem uma tela em Swing que abre um arquivo e mostra em um TextArea o resultado do ranking;
+* A arquitetura está muito simples, onde tem uma tela em Swing que abre um arquivo e mostra em um TextArea o resultado do ranking;
 
-2 - Por efeitos de testes pessoais, eu resolvi criar toda a Logica nas classes de Entity, costumeiramente criamos as classes de Entity/TOs com somente propriedades e seus métodos de GET/SET sem nenhuma lógica(padrão muito comum no mercado), porém gostaria de experimentar alguns novos padrões onde as entitys recebem métodos contendo lógicas de negócio porém somente respectivas a eles, particularmente achei interessante, porém somente para aplicações pequenas e bem especificas como essa, em ambiente corporativo ou com aplicações com lógicas mais pesadas, o melhor ainda é o formato tradicional, onde há uma ou mais classes de negócio.
+* Por efeitos de testes pessoais, eu resolvi criar toda a Logica nas classes de Entity, costumeiramente criamos as classes de Entity/TOs com somente propriedades e seus métodos de GET/SET sem nenhuma lógica(padrão muito comum no mercado), porém gostaria de experimentar alguns novos padrões onde as entitys recebem métodos contendo lógicas de negócio porém somente respectivas a eles, particularmente achei interessante, porém somente para aplicações pequenas e bem especificas como essa, em ambiente corporativo ou com aplicações com lógicas mais pesadas, o melhor ainda é o formato tradicional, onde há uma ou mais classes de negócio.
 
