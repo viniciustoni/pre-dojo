@@ -27,12 +27,19 @@ Não obrigatório. Faça apenas caso se identifique com o problema ou se achar q
 
 SOLUÇÃO
 =======
-* Seja criativo;
-* Explore ao máximo a orientação a objetos;
-* Crie testes unitários e tente usar TDD;
-* Não é necessário utilizar nenhum framework, mas fica ao seu critério; 
+* Para a execução:
 
-ENTREGA
-=======
-* Faça um fork do nosso repositório, nos envie a url do seu repositório com a solução;
-* Utilize o arquivo SUAS-INSTRUÇÕES.txt para adicionar algum comentário/observação que achar importante.
+1 - Baixar o projeto
+2 - Executar o seguinte comando: mvn clean package
+3 - Executar o seguinte comando: mvn exec:java
+4 - Clicar no Botao de "Processar Arquivo"
+5 - Selecionar algum arquivo .txt ou .log
+6 - Clicar em Abrir
+
+-------------------------
+* Considerações
+
+1 - A arquitetura está muito simples, onde tem uma tela em Swing que abre um arquivo e mostra em um TextArea o resultado do ranking;
+
+2 - Por efeitos de testes pessoais, eu resolvi criar toda a Logica nas classes de Entity, costumeiramente criamos as classes de Entity/TOs com somente propriedades e seus métodos de GET/SET sem nenhuma lógica(padrão muito comum no mercado), porém gostaria de experimentar alguns novos padrões onde as entitys recebem métodos contendo lógicas de negócio porém somente respectivas a eles, particularmente achei interessante, porém somente para aplicações pequenas e bem especificas como essa, em ambiente corporativo ou com aplicações com lógicas mais pesadas, o melhor ainda é o formato tradicional, onde há uma ou mais classes de negócio.
+
