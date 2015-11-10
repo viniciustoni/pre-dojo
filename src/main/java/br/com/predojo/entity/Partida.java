@@ -75,20 +75,20 @@ public class Partida implements Serializable {
 	/**
 	 * Processa a morte no jogo.
 	 * 
-	 * @param nomJogadorMatou
+	 * @param nomJogadorKill
 	 *            Nome do jogador que efetuou a morte.
-	 * @param nomJogadorMorreu
+	 * @param nomJogadorDeath
 	 *            Nome do jogador que morreu
 	 * @param nomArma
 	 *            Nome da arma.
 	 * @param datMorte
 	 *            Data da morte
 	 */
-	public void processaMorte(final String nomJogadorMatou, final String nomJogadorMorreu, final String nomArma,
+	public void processaMorte(final String nomJogadorKill, final String nomJogadorDeath, final String nomArma,
 			final Date datMorte) {
 
 		// Carrega o jogador que efetuou a morte
-		final Jogador jogadorMatou = getJogador(nomJogadorMatou);
+		final Jogador jogadorMatou = getJogador(nomJogadorKill);
 
 		// Processa o kill, caso o jogador existir
 		if (jogadorMatou != null) {
@@ -97,7 +97,7 @@ public class Partida implements Serializable {
 		}
 
 		// Conta a morte do jogador.
-		final Jogador jogadorMorreu = getJogador(nomJogadorMorreu);
+		final Jogador jogadorMorreu = getJogador(nomJogadorDeath);
 		if (jogadorMorreu != null) {
 			jogadorMorreu.contaMorte();
 			atualizaJogador(jogadorMorreu);
