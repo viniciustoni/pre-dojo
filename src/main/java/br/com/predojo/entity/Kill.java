@@ -8,13 +8,13 @@ import java.io.Serializable;
  * @author Vinicius A Gai
  *
  */
-public abstract class BaseKillsJogo implements Serializable, Comparable<BaseKillsJogo> {
+public abstract class Kill implements Serializable, Comparable<Kill> {
 
 	private static final long serialVersionUID = 6521090313502384003L;
 
 	private Integer qtdKills;
 
-	public BaseKillsJogo() {
+	public Kill() {
 		super();
 		this.qtdKills = 0;
 	}
@@ -26,12 +26,12 @@ public abstract class BaseKillsJogo implements Serializable, Comparable<BaseKill
 	/**
 	 * Incrementa mais uma morte.
 	 */
-	protected void incrementarKill() {
+	protected void incrementaKill() {
 		this.qtdKills++;
 	}
 
 	@Override
-	public int compareTo(BaseKillsJogo baseKillsJogoTOOther) {
+	public int compareTo(Kill baseKillsJogoTOOther) {
 		if (this.qtdKills > baseKillsJogoTOOther.qtdKills) {
             return -1;
         }

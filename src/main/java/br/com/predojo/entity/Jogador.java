@@ -15,26 +15,26 @@ import org.apache.commons.collections4.CollectionUtils;
  * @author Vinicius A Gai
  *
  */
-public class Jogador extends BaseKillsJogo {
+public class Jogador extends Kill {
 
 	private static final long serialVersionUID = 1825462953754342872L;
 
 	private static final long ONE_MINUTE = 60 * 1000;
 
 	private final String nomJogador;
-	private Integer qtdMorreu;
+	private Integer qtdDeath;
 	private boolean hasAward5Mortes;
-	private Integer maxMortesSeguidas;
-	private Integer qtdMortesAtual;
+	private Integer maxKillsSeguidas;
+	private Integer qtdKillsAtual;
 	private Date datInicioKill;
 	private final Map<String, Arma> armasUtilizadasTO;
 
 	public Jogador(String nomJogador) {
 		super();
 		this.nomJogador = nomJogador;
-		this.qtdMorreu = 0;
-		this.maxMortesSeguidas = 0;
-		this.qtdMortesAtual = 0;
+		this.qtdDeath = 0;
+		this.maxKillsSeguidas = 0;
+		this.qtdKillsAtual = 0;
 		this.armasUtilizadasTO = new TreeMap<>();
 	}
 
@@ -42,24 +42,24 @@ public class Jogador extends BaseKillsJogo {
 		return nomJogador;
 	}
 
-	public Integer getQtdMorreu() {
-		return qtdMorreu;
+	public Integer getQtdDeath() {
+		return qtdDeath;
 	}
 
 	public boolean isHasAward5Mortes() {
 		return hasAward5Mortes;
 	}
 
-	public Integer getMaxMortesSeguidas() {
-		return maxMortesSeguidas;
+	public Integer getMaxKillsSeguidas() {
+		return maxKillsSeguidas;
 	}
 
 	/**
 	 * Efetua as regras para contar a morte do jogador.
 	 */
 	public void contaMorte() {
-		this.qtdMorreu++;
-		this.qtdMortesAtual = 0;
+		this.qtdDeath++;
+		this.qtdKillsAtual = 0;
 		this.datInicioKill = null;
 	}
 
@@ -68,13 +68,13 @@ public class Jogador extends BaseKillsJogo {
 	 * 
 	 * @param nomArma
 	 */
-	public void contaKill(final String nomArma, final Date datMorte) {
+	public void incrementaKill(final String nomArma, final Date datMorte) {
 
 		// Quantidade de mortes
-		this.qtdMortesAtual++;
+		this.qtdKillsAtual++;
 
 		// Valida outros dados do jogador.
-		incrementarKill();
+		incrementaKill();
 		verifica5MortesSemMorrer(datMorte);
 		verificaMaxNumeroMortes();
 		contaKillArma(nomArma);
@@ -87,7 +87,7 @@ public class Jogador extends BaseKillsJogo {
 	 * @return true caso já morreu.
 	 */
 	public boolean hasMorte() {
-		return this.qtdMorreu > 0;
+		return this.qtdDeath > 0;
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class Jogador extends BaseKillsJogo {
 		if (this.datInicioKill == null) {
 			this.datInicioKill = datMorte;
 			// Caso tempo ja iniciado, verifica se ele tem 5 mortes em um minuto.
-		} else if (qtdMortesAtual >= 5 && !this.hasAward5Mortes) {
+		} else if (qtdKillsAtual >= 5 && !this.hasAward5Mortes) {
 			final boolean inOneMinute = (datMorte.getTime() - this.datInicioKill.getTime()) <= ONE_MINUTE;
 			if (inOneMinute) {
 				this.hasAward5Mortes = true;
@@ -154,8 +154,8 @@ public class Jogador extends BaseKillsJogo {
 	 * Verifica a quantidade máxima de mortes.
 	 */
 	private void verificaMaxNumeroMortes() {
-		if (this.qtdMortesAtual > this.maxMortesSeguidas) {
-			this.maxMortesSeguidas = this.qtdMortesAtual;
+		if (this.qtdKillsAtual > this.maxKillsSeguidas) {
+			this.maxKillsSeguidas = this.qtdKillsAtual;
 		}
 	}
 	

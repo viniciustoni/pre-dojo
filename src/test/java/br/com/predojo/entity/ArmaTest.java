@@ -14,7 +14,7 @@ import br.com.predojo.entity.Arma;
 public class ArmaTest {
 
 	private static final String NOM_ARMA = "AK-47";
-	private static final Integer QTD_MORTES_TEST = 1;
+	private static final Integer QTD_KILLS_TEST = 1;
 	
 	@Test
 	public void testIncremetaMorte() {
@@ -26,7 +26,7 @@ public class ArmaTest {
 		armaTO.incremetaKill();
 		
 		// Testa se incrementou.
-		Assert.assertEquals(QTD_MORTES_TEST, armaTO.getQtdKills());
+		Assert.assertEquals(QTD_KILLS_TEST, armaTO.getQtdKills());
 		
 	}
 	

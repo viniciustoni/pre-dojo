@@ -38,19 +38,19 @@ public class JogadorTest {
 		final Jogador jogadorTO = new Jogador(NOM_JOGADOR);
 		
 		// 3 mortes com AK47
-		jogadorTO.contaKill(NOM_ARMA_AK47, new Date());
-		jogadorTO.contaKill(NOM_ARMA_AK47, new Date());
-		jogadorTO.contaKill(NOM_ARMA_AK47, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_AK47, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_AK47, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_AK47, new Date());
 		
 		// 2 mortes com M16
-		jogadorTO.contaKill(NOM_ARMA_M16, new Date());
-		jogadorTO.contaKill(NOM_ARMA_M16, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_M16, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_M16, new Date());
 		
 		// Valida os dados
 		Assert.assertEquals(NOM_JOGADOR, jogadorTO.getNomJogador());
 		Assert.assertEquals(Integer.valueOf(5), jogadorTO.getQtdKills());
-		Assert.assertEquals(Integer.valueOf(5), jogadorTO.getMaxMortesSeguidas());
-		Assert.assertEquals(Integer.valueOf(0), jogadorTO.getQtdMorreu());
+		Assert.assertEquals(Integer.valueOf(5), jogadorTO.getMaxKillsSeguidas());
+		Assert.assertEquals(Integer.valueOf(0), jogadorTO.getQtdDeath());
 		Assert.assertTrue(jogadorTO.isHasAward5Mortes());
 		Assert.assertFalse(jogadorTO.hasMorte());
 		
@@ -76,22 +76,22 @@ public class JogadorTest {
 		final Jogador jogadorTO = new Jogador(NOM_JOGADOR);
 		
 		// 3 mortes com AK47
-		jogadorTO.contaKill(NOM_ARMA_AK47, new Date());
-		jogadorTO.contaKill(NOM_ARMA_AK47, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_AK47, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_AK47, new Date());
 		
 		// Conta uma morte
 		jogadorTO.contaMorte();
 		
 		// 2 mortes com M16
-		jogadorTO.contaKill(NOM_ARMA_M16, new Date());
-		jogadorTO.contaKill(NOM_ARMA_M16, new Date());
-		jogadorTO.contaKill(NOM_ARMA_M16, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_M16, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_M16, new Date());
+		jogadorTO.incrementaKill(NOM_ARMA_M16, new Date());
 		
 		// Valida os dados
 		Assert.assertEquals(NOM_JOGADOR, jogadorTO.getNomJogador());
 		Assert.assertEquals(Integer.valueOf(5), jogadorTO.getQtdKills());
-		Assert.assertEquals(Integer.valueOf(3), jogadorTO.getMaxMortesSeguidas());
-		Assert.assertEquals(Integer.valueOf(1), jogadorTO.getQtdMorreu());
+		Assert.assertEquals(Integer.valueOf(3), jogadorTO.getMaxKillsSeguidas());
+		Assert.assertEquals(Integer.valueOf(1), jogadorTO.getQtdDeath());
 		Assert.assertFalse(jogadorTO.isHasAward5Mortes());
 		Assert.assertTrue(jogadorTO.hasMorte());
 		
@@ -119,19 +119,19 @@ public class JogadorTest {
 		final Jogador jogadorTO = new Jogador(NOM_JOGADOR);
 		
 		// 3 mortes com AK47
-		jogadorTO.contaKill(NOM_ARMA_AK47, BaseTest.createDate(9, 0, 1));
-		jogadorTO.contaKill(NOM_ARMA_AK47, BaseTest.createDate(9, 0, 20));
+		jogadorTO.incrementaKill(NOM_ARMA_AK47, BaseTest.createDate(9, 0, 1));
+		jogadorTO.incrementaKill(NOM_ARMA_AK47, BaseTest.createDate(9, 0, 20));
 		
 		// 2 mortes com M16
-		jogadorTO.contaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 30));
-		jogadorTO.contaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 50));
-		jogadorTO.contaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 61));
+		jogadorTO.incrementaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 30));
+		jogadorTO.incrementaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 50));
+		jogadorTO.incrementaKill(NOM_ARMA_M16, BaseTest.createDate(9, 0, 61));
 		
 		// Valida os dados
 		Assert.assertEquals(NOM_JOGADOR, jogadorTO.getNomJogador());
 		Assert.assertEquals(Integer.valueOf(5), jogadorTO.getQtdKills());
-		Assert.assertEquals(Integer.valueOf(5), jogadorTO.getMaxMortesSeguidas());
-		Assert.assertEquals(Integer.valueOf(0), jogadorTO.getQtdMorreu());
+		Assert.assertEquals(Integer.valueOf(5), jogadorTO.getMaxKillsSeguidas());
+		Assert.assertEquals(Integer.valueOf(0), jogadorTO.getQtdDeath());
 		Assert.assertFalse(jogadorTO.isHasAward5Mortes());
 		Assert.assertFalse(jogadorTO.hasMorte());
 		

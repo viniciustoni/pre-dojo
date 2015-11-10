@@ -45,19 +45,19 @@ public class PartidaTest {
 		final Jogador jogadorVencedor = jogadores.get(0);
 		Assert.assertEquals(NOM_JOGADOR_1, jogadorVencedor.getNomJogador());
 		Assert.assertEquals(Integer.valueOf(3), jogadorVencedor.getQtdKills());
-		Assert.assertEquals(Integer.valueOf(1), jogadorVencedor.getQtdMorreu());
+		Assert.assertEquals(Integer.valueOf(1), jogadorVencedor.getQtdDeath());
 
 		// Segundo jogador
 		final Jogador jogadorSegundo = jogadores.get(1);
 		Assert.assertEquals(NOM_JOGADOR_3, jogadorSegundo.getNomJogador());
 		Assert.assertEquals(Integer.valueOf(2), jogadorSegundo.getQtdKills());
-		Assert.assertEquals(Integer.valueOf(4), jogadorSegundo.getQtdMorreu());
+		Assert.assertEquals(Integer.valueOf(4), jogadorSegundo.getQtdDeath());
 
 		// Terceiro jogador
 		final Jogador jogadorTerceiro = jogadores.get(2);
 		Assert.assertEquals(NOM_JOGADOR_2, jogadorTerceiro.getNomJogador());
 		Assert.assertEquals(Integer.valueOf(1), jogadorTerceiro.getQtdKills());
-		Assert.assertEquals(Integer.valueOf(2), jogadorTerceiro.getQtdMorreu());
+		Assert.assertEquals(Integer.valueOf(2), jogadorTerceiro.getQtdDeath());
 	}
 
 }

@@ -115,9 +115,9 @@ public class PreDojoUtils {
 		linhaJogador.append(SEPARADOR);
 		linhaJogador.append(StringUtils.rightPad(jogador.getQtdKills().toString(), TAM_QTD_KILLS));
 		linhaJogador.append(SEPARADOR);
-		linhaJogador.append(StringUtils.rightPad(jogador.getQtdMorreu().toString(), TAM_QTD_MORTES));
+		linhaJogador.append(StringUtils.rightPad(jogador.getQtdDeath().toString(), TAM_QTD_MORTES));
 		linhaJogador.append(SEPARADOR);
-		linhaJogador.append(StringUtils.rightPad(jogador.getMaxMortesSeguidas().toString(), TAM_QTD_KILLS_MAX));
+		linhaJogador.append(StringUtils.rightPad(jogador.getMaxKillsSeguidas().toString(), TAM_QTD_KILLS_MAX));
 		linhaJogador.append(SEPARADOR);
 		linhaJogador.append(StringUtils.rightPad(jogador.getNomeArmaMaisUtilizada(), TAM_ARMA_PREFERIDA));
 		linhaJogador.append(SEPARADOR);

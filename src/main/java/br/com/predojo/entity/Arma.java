@@ -6,7 +6,7 @@ package br.com.predojo.entity;
  * @author Vinicius A Gai
  *
  */
-public class Arma extends BaseKillsJogo {
+public class Arma extends Kill {
 
 	private static final long serialVersionUID = 6151976615489853639L;
 
@@ -31,7 +31,7 @@ public class Arma extends BaseKillsJogo {
 	 * Incrementa mais uma morte para a arma.
 	 */
 	public void incremetaKill() {
-		incrementarKill();
+		super.incrementaKill();
 	}
 
 	@Override

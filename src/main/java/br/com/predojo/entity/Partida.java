@@ -92,7 +92,7 @@ public class Partida implements Serializable {
 
 		// Processa o kill, caso o jogador existir
 		if (jogadorMatou != null) {
-			jogadorMatou.contaKill(nomArma, datMorte);
+			jogadorMatou.incrementaKill(nomArma, datMorte);
 			atualizaJogador(jogadorMatou);
 		}
 
