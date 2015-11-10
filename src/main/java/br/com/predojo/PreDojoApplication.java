@@ -1,5 +1,9 @@
 package br.com.predojo;
 
+import javax.swing.SwingUtilities;
+
+import br.com.predojo.view.PreDojoView;
+
 /**
  * Classe main da alicação.
  * 
@@ -9,7 +13,13 @@ package br.com.predojo;
 public class PreDojoApplication {
 
 	public static void main(String[] args) {
-		System.out.println("Teste");
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				final PreDojoView preDojoView = new PreDojoView();
+				preDojoView.getFrmApplication().setVisible(true);
+			}
+		});
+
 	}
-	
+
 }

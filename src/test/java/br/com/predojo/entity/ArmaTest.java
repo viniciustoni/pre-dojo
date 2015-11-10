@@ -3,8 +3,6 @@ package br.com.predojo.entity;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.predojo.entity.Arma;
-
 /**
  * Junits para os métodos presentes na classe de {@link Arma}
  * 

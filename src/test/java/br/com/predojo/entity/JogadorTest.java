@@ -5,8 +5,6 @@ import java.util.Date;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.predojo.entity.Arma;
-import br.com.predojo.entity.Jogador;
 import br.com.predojo.util.BaseTest;
 
 /**
